@@ -1,0 +1,17 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+<!-- Название у нас будет products -->
+{% block title %}
+Удалить новость
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<h1>Удаление новости</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Удаляем "{{ object.name }}"?</p>
+    <input type="submit" value="Удалить" />
+</form>
+{% endblock content %}

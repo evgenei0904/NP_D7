@@ -1,0 +1,27 @@
+{% extends 'default.html' %}
+{% block title %} News list {% endblock title %}
+{% block content %}
+<h2>Вы действительно хотите подписаться на данную категорию?</h2>
+<table>
+    <thead>
+        <th>
+            Имя пользователя
+        </th>
+        <th>
+            Наименование категории для подписки
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ category.name }}
+        </td>
+        <td>
+            {{ category.subscribe }}
+        </td>
+    </tr>
+</table>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %}
